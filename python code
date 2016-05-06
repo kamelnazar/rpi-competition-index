@@ -48,9 +48,9 @@ GPIO.setup(TR,GPIO.OUT)
 GPIO.setup(EC,GPIO.IN)
 
 db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
 
 #ID=2
 #define x to use the connection
@@ -247,18 +247,18 @@ while 1:
     
     if distance < 8:
         db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
         curb = db.cursor()
         curb.execute("UPDATE ParckingTB SET Status=1 WHERE ID='1'")
         db.autocommit(True)
         print "Parking 1 is not available"
     else:
         db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
         curb = db.cursor()
         curb.execute("UPDATE ParckingTB SET Status=2 WHERE ID='1'")
         db.autocommit(True)
@@ -267,27 +267,27 @@ while 1:
     print "Distance in parking 2: ",distance1,"cm"
     if distance1 < 8:
         db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
         curb = db.cursor()
         curb.execute("UPDATE ParckingTB SET Status=1 WHERE ID='2'")
         db.autocommit(True)
         print "Parking 2  is not available"
     else:
         db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
         curb = db.cursor()
         curb.execute("UPDATE ParckingTB SET Status=2 WHERE ID='2'")
         db.autocommit(True)
         print bcolors.WARNING + "Parking 2 is available" + bcolors.ENDC
     print "********************************************************************"
     db = MySQLdb.connect(host="sql6.freemysqlhosting.net",    # your host, usually localhost
-                     user="sql6108503",         # your username
-                     passwd="QYaQwC8CGJ",  # your password
-                     db="sql6108503")
+                     user="",         # your username
+                     passwd="",  # your password
+                     db="")
     x = db.cursor()
     x.execute("SELECT Status  FROM TrigerTB where ID='1' ")
     row = x.fetchall()
